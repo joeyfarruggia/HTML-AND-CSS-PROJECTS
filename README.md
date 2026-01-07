@@ -1,2 +1,2 @@
 # HTML-AND-CSS-PROJECTS
-For Tech Academy HTML and CSS Projects
+This Repository is for Tech Academy HTML and CSS Projects
