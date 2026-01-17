@@ -2,9 +2,15 @@ p {
 	color: linen;
 	background: green;
 	font-weight: bold;
-	text-align: right;
+	text-align: center;
 	text-shadow: 2px 2px #ff0000
 }
 body {
 	background: black;
+}
+h1 {
+	text-align: center;
+}
+h2 {
+	text-align: center;
 }
