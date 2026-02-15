@@ -25,7 +25,7 @@ ul {
 
 a {
     display: block;
-    font-family: Calibri, sans-serif;
+    font-family: 'Sofia', sans-serif;
     font-size: 23px;
     font-weight: 600;
     color: white;
@@ -203,8 +203,10 @@ hover effect is triggered.*/
     /*Makes the shape invisible until the animation
     is triggered by a hover effect*/
     top: 50%;
-    left: 50%; /*Top and left position circle to center of image 3*/
-    transform: translate(-50%, -50%); /*Allows circle to evenly expand on all
+    left: 50%;
+    /*Top and left position circle to center of image 3*/
+    transform: translate(-50%, -50%);
+    /*Allows circle to evenly expand on all
     4 sides of image 3*/
     animation: burst-reverse 1s;
 }
