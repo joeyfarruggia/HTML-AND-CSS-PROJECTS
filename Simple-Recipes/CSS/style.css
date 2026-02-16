@@ -527,7 +527,7 @@ input[type=submit]:hover {
     background-color: rgb(247, 177, 188);
 }
 
-.about p{
+.about p {
     font-family: "Sacramento", cursive;
     /*Font from fonts.google.com*/
     font-size: 40px;
