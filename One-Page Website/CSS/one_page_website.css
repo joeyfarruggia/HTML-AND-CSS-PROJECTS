@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic&display=swap');
+/*Import link for Playwrite NZ Basic font from fonts.google.com*/
+
+html {
+    background-color: black;
+}
+
+.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    list-style-type: none;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    /*Removes the default bullet points from the list*/
+    align-items: center;
+    margin: -8px -8px 0px -8px;
+
+}
+
+a {
+    font-size: large;
+    font-family: "Playwrite NZ Basic", cursive;
+    /*Font from fonts.google.com*/
+    color: bisque;
+    text-align: center;
+    width: 100px;
+    padding: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playwrite NZ Basic", cursive;
+    /*Font from fonts.google.com*/
+    font-size: large;
+    color: bisque;
+    background-color: black;
+    text-align: center;
+}
+
+li {
+    align-items: center;
+}
+
+#contact {
+    display: block;
+    margin-bottom: 50px;
+}
+
+form {
+    display: table;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form input {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    color: black;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 10px 15px 10px 0px;
+
+}
