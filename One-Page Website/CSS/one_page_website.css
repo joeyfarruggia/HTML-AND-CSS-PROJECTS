@@ -13,7 +13,7 @@ html {
 }
 
 ul {
-    display: flex;
+    display: inline;
     list-style-type: none;
     /*Removes the default bullet points from the list*/
     align-items: center;
@@ -25,10 +25,10 @@ a {
     font-size: large;
     font-family: "Playwrite NZ Basic", cursive;
     /*Font from fonts.google.com*/
-    color: bisque;
+    color: aqua;
     text-align: center;
     width: 100px;
-    padding: 20px;
+    padding: 10px;
     text-decoration: none;
     transition: background-color 0.3s ease-in;
 }
@@ -41,6 +41,11 @@ h3 {
     font-size: large;
     color: bisque;
     background-color: black;
+    text-align: center;
+}
+
+p {
+    color: white;
     text-align: center;
 }
 
@@ -68,5 +73,6 @@ form input {
     border-radius: 5px;
     padding: 3px;
     margin: 10px 15px 10px 0px;
+    width: 100%;
 
 }
