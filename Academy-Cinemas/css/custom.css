@@ -56,8 +56,12 @@ the "active link"*/
 
 .nav-link:focus {
     color: var(--accent-text-color);
-    --bs-navbar-active-color: var(--accent-text-color);
     text-shadow: 0 0 3px rgba(255, 123, 0, 0.6);
+}
+
+.nav-link:focus,
+.nav-link.active {
+    color: var(--accent-text-color);
 }
 
 /*Adjusts the left padding of the navbar links*/
