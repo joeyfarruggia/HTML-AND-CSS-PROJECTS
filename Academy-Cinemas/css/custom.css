@@ -1,6 +1,9 @@
 /*Font Passion One from fonts.google.com*/
 @import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
 
+/*Font Yesteryear from fonts.google.com*/
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+
 
 /*Creates global CSS variables that can be reused throughout
 the file*/
@@ -13,12 +16,21 @@ the file*/
     --accent-color: rgb(36, 36, 36);
     --accent-text-color: rgb(255, 255, 255);
     --main-font-family: "Passion One", cursive;
+    --secondary-font-family: "Yesteryear", cursive;
 
+}
+
+html {
+    scroll-padding-top: 100px;
 }
 
 body {
     background-image: url(../images/theater-curtains.jpg);
-    background-size: 100%;
+    background-size: 100% 120%;
+    /*100% horizontally and 120% vertically*/
+    background-attachment: fixed;
+    overflow-x: hidden;
+    /*Removes left to right scroll bar*/
 }
 
 /*NAVBAR*/
@@ -54,14 +66,11 @@ body {
 /*Sets the color of the link that has been clicked on, AKA
 the "active link"*/
 
-.nav-link:focus {
-    color: var(--accent-text-color);
-    text-shadow: 0 0 3px rgba(255, 123, 0, 0.6);
-}
-
 .nav-link:focus,
-.nav-link.active {
-    color: var(--accent-text-color);
+.nav-link.active,
+.nav-link.collapsed:focus {
+    color: var(--accent-text-color) !important;
+    text-shadow: 0 0 3px rgba(255, 123, 0, 0.6);
 }
 
 /*Adjusts the left padding of the navbar links*/
@@ -135,10 +144,159 @@ each movie title*/
 
 /*General Styling*/
 
+h1,
+h3,
+h4,
+h5,
+p {
+    cursor: default;
+    /*Changes cursor to default arrow instead of text
+    cursor when hovering over text*/
+
+}
+
 h1 {
     font-family: var(--main-font-family);
     color: var(--main-color-accent);
     text-shadow: 0 0 10px rgb(0, 0, 0);
     text-align: center;
     font-size: 100px;
+}
+
+h3 {
+    font-family: var(--main-font-family);
+    font-size: 50px;
+
+}
+
+h4 {
+    font-family: var(--secondary-font-family);
+    font-size: 25px;
+}
+
+h5 {
+    font-size: 30px;
+    font-family: var(--main-font-family);
+}
+
+b {
+    font-weight: 600;
+
+}
+
+img {
+    border-radius: 5px;
+}
+
+/*Movie Cards*/
+
+.container {
+    padding: 100px;
+}
+
+.card {
+    border: 5px solid var(--main-color);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.card-body {
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.spacer {
+    padding-top: 50px;
+}
+
+/*Buttons*/
+
+/*Creates the main styling for buttons that contain the Bootstrap
+.btn class*/
+.btn {
+    background-color: var(--main-color);
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    color: var(--accent-color);
+    font-family: var(--main-font-family);
+    font-size: 18px;
+}
+
+.btn:focus {
+    border-color: transparent;
+    /*Overrides bootstraps dark border when the user
+    clicks on the button*/
+    background-color: var(--main-color);
+    color: var(--accent-text-color);
+}
+
+.btn:hover {
+    border-color: transparent;
+    background-color: var(--main-color);
+    color: var(--accent-text-color);
+}
+
+/*Added styling for yellow buttons for buy tickets and contact form sections*/
+
+.yellow-btn {
+    background-color: var(--main-color-accent);
+    padding: 20px;
+    border-radius: 40px;
+    font-size: 25px;
+    color: var(--accent-color);
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.yellow-btn:hover, .yellow-btn:focus {
+    background-color: var(--main-color-accent);
+    color: var(--accent-text-color);
+}
+
+/*Ticket Cards*/
+
+/*Specifically styles card class within the element containing the tickets ID*/
+#tickets .cards {
+    padding: 40px;
+    height: 250px;
+    margin-right: 20px;
+    background-color: white;
+}
+
+.form-select {
+    font-family: var(--main-font-family);
+    font-size: 20px;
+    border: 3px solid var(--main-color);
+    transition: border-color 0.5s ease-in;
+
+}
+
+.form-select:focus {
+    border-color: var(--secondary-color);
+    /*Overrides bootstraps box shadow*/
+    box-shadow: none;
+    transition: 0.5s ease-in;
+}
+
+/*Select number of tickets input*/
+
+input[type="number"] {
+    width: 70px;
+    padding: 5px;
+    border: 3px solid var(--main-color);
+    border-radius: 5px;
+    font-family: var(--main-font-family);
+    font-size: 20px;
+    transition: border-color 0.5s ease-in;
+}
+
+input[type="number"]:focus {
+    border: 3px solid var(--secondary-color);
+    transition: 0.5s ease-in;
+    outline: 0;
+    /*Removes default outline set by browser*/
+
 }
