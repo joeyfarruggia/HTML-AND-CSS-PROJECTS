@@ -251,7 +251,8 @@ img {
     margin-bottom: 40px;
 }
 
-.yellow-btn:hover, .yellow-btn:focus {
+.yellow-btn:hover,
+.yellow-btn:focus {
     background-color: var(--main-color-accent);
     color: var(--accent-text-color);
 }
@@ -259,7 +260,7 @@ img {
 /*Ticket Cards*/
 
 /*Specifically styles card class within the element containing the tickets ID*/
-#tickets .cards {
+#tickets .card {
     padding: 40px;
     height: 250px;
     margin-right: 20px;
@@ -299,4 +300,51 @@ input[type="number"]:focus {
     outline: 0;
     /*Removes default outline set by browser*/
 
+}
+
+/*CONTACT FORM*/
+
+.form-control {
+    border: 3px solid var(--main-color);
+    transition: 1s ease;
+
+}
+
+/*Overrides bootstraps focus effect*/
+
+.form-control:focus {
+    color: #212529;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0px .25rem var(--main-color);
+}
+
+/*Adjusts contact form submit button to right side of screen*/
+
+#contact-submit {
+    float: right;
+}
+
+/*FOOTER*/
+
+footer {
+    border-top: 5px solid var(--main-color);
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 0px -15px 0 -15px;
+    /*Extends footer beyond webpage on left and right side
+    leaving no white space*/
+}
+
+.footer-text {
+    font-family: var(--main-font-family);
+    color: var(--accent-text-color);
+    font-size: 30px;
+
+}
+
+/*Styles the footer img seperate from other images on page, overrides img type
+selector styling*/
+
+.footer-img{
+    width: auto;
+    height: 130px;
 }

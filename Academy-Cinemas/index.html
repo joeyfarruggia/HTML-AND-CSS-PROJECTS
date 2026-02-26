@@ -57,7 +57,7 @@
     </header>
     <!--Now Playing-->
     <section>
-        <div class="container">
+        <div class="container" id="now-playing">
             <h1>Now Playing</h1>
             <!--Ben Hur-->
             <div class="d-flex flex-row flex-wrap spacer" id="ben-hur">
@@ -232,6 +232,60 @@
                 </div>
             </div>
         </div>
+    </section>
+    <!--CONTACT FORM-->
+    <section>
+        <div class="container" id="contact">
+            <h1>Contact Us!</h1>
+            <div class="row gy-4">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="First Name">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Last Name">
+                </div>
+                <div>
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+                <div>
+                    <textarea class="form-control" rows="3" placeholder="Type Message Here..."></textarea>
+                    <button type="submit" class="btn yellow-btn" id="contact-submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--FOOTER-->
+    <section>
+        <div class="container-fluid">
+            <footer class="d-flex flex-wrap justify-content-center align-items-center py-3">
+                <div class="row">
+                    <p class="col-md-4 mb-0 footer-text">
+                        &copy; Academy Cinemas
+                    </p>
+
+                    <img src="images/logo.png" class="col-md-4 footer-img" alt="Academy Cinemas Logo">
+                    <ul class="nav col-md-4 justify-content-end">
+                        <li class="nav-item">
+                            <a href="#now-playing" class="nav-link px-2 footer-text">Now Playing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tickets" class="nav-link px-2 footer-text">Tickets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link px-2 footer-text">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-2 footer-text">Facebook</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-2 footer-text">Instagram</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-2 footer-text">Phone Number 123-456-7890</a>
+                        </li>
+                    </ul>
+                </div>
+            </footer>
     </section>
 </body>
 
