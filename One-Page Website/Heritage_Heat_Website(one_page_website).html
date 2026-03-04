@@ -5,68 +5,61 @@
     <title>Heritage Heat Can Co.</title>
     <meta charset="utf-8">
     <meta name="description" content="home page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/one_page_website.css" rel="stylesheet">
 </head>
 
 <body>
     <!--PAGES NAV BAR-->
     <nav>
-        <ul>
-            <a href="#Heritage_Heat_Website.html">
-                <li>Home</li>
-            </a>
-            <a href="#Products">
-                <li>Products</li>
-            </a>
-            <a href="#contact">
-                <li>Contact Us</li>
-            </a>
-            <a href="#story">
-                <li>Our Story</li>
-            </a>
-
-        </ul>
+        <div class="nav-bar">
+            <a href="#Heritage_Heat_Website.html">Home</a>
+            <a href="#Products">Products</a>
+            <a href="#story">Our Story</a>
+            <a href="#contact">Contact Us</a>
+        </div>
     </nav>
     <!--HEADER-->
-    <header>
-        <div>
+    <header class="video-header">
+        <video class="header-video" autoplay muted loop playsinline>
+            <source src="Fire-Video.mp4" type="video/mp4">
+            Your browser does not support video backgrounds.
+        </video>
+        <div class="video-overlay"></div>
+        <div class="header-content">
             <h1>Welcome to Heritage Heat Can Co.</h1>
         </div>
     </header>
-    <!--NAV BAR FOR THIS PAGE-->
-    <ul>
-        <a href="#Products">
-            <li>Product Pictures</li>
-        </a>
-        <a href="#Videos">
-            <li>Product Testing Videos</li>
-        </a>
-        <a href="#contact">
-            <li>Sign Up For Our Newsletter</li>
-        </a>
-    </ul>
+
     <!--PRODUCT PICTURES-->
+
     <section>
         <div>
-            <h2>Product Pictures</h2>
             <div>
                 <!--SUPPRESSOR COVER IMAGES-->
-                <div id="Products">
+                <div class="image-hover-wrapper" id="Products">
                     <h3>Suppressor Covers</h3>
-                    <img src="images/All_Covers.png" alt="All Suppressor Covers">
+                    <img class="img" src="images/All_Covers.png" alt="All Suppressor Covers">
+                    <div class="hover-text">All Suppressor Covers</div>
                 </div>
-                <div>
-                    <img src="images/Four_Covers.png" alt="4 Most Popular Covers">
+                <div class="image-hover-wrapper">
+                    <img class="img" src="images/Four_Covers.png" alt="4 Most Popular Covers">
+                    <div class="hover-text">4 Most Popular Covers</div>
                 </div>
-                <div>
-                    <img src="images/Logo.png" alt="Company Logo">
+                <div class="image-hover-wrapper">
+                    <img class="img" src="images/Logo.png" alt="Company Logo">
+                    <div class="hover-text">Heritage Heat</div>
                 </div>
             </div>
         </div>
     </section>
+
     <!--PRODUCT TEST VIDEOS-->
+
     <section>
+
         <!--FIRST PRODUCT TEST VIDEO-->
+
         <div id="Videos">
             <h3>Product Testing Video</h3>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/89qUY1ghfNU?si=j1PV4PwFfecjjHDF"
@@ -76,7 +69,9 @@
             </iframe>
         </div>
     </section>
+
     <!--OUR STORY-->
+
     <section>
         <div id="story">
             <h2>How we got started!</h2>
@@ -102,6 +97,7 @@
     </section>
 
     <!--NEWSLETTER SIGN UP FORM-->
+
     <section>
         <div id="contact">
             <h3>Please get us your contact info to stay up to date with our page!</h3>
@@ -115,24 +111,23 @@
             </div>
         </div>
     </section>
+
     <!--OUR STORY-->
 
     <!--FOOTER-->
-    <footer>
-        <table>
-            <tr>
-                <td>
-                    <p>Heritage Heat Can Co.</p>
-                </td>
-                <td>
-                    <p>123 NW 25th St. Redmond, OR 97756</p>
 
-                </td>
-                <td>
-                    <p>541-123-4567</p>
-                </td>
-            </tr>
-        </table>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <p>Copyright © 2024 Heritage Heat Can Co.</p>
+            </div>
+            <div class="footer-column">
+                <p>3717 NW 25th St. Redmond, OR 97756</p>
+            </div>
+            <div class="footer-column">
+                <p>Contact Us: 541-728-4017</p>
+            </div>
+        </div>
     </footer>
 </body>
 
