@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<!--Head-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Joey's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="css/Joey-Portfolio.css">
+</head>
+
+<!--Body-->
+
+<body class="Background">
+
+    <!--Navbar-->
+    <div class="Navbar">
+        <a class="active" href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#GitHub">GitHub</a>
+        <a href="#Contact">Contact</a>
+    </div>
+
+    <!--Breaks added to give spacing between navbar and content-->
+    <br>
+    <br>
+
+    <!--Background video-->
+
+    <div id="Home">
+        <video autoplay muted loop id="Record-Player-Video">
+            <source src="images/Record-Player-Video.mp4" type="video/mp4">
+            <!--Display message if video fails to run-->
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <!--TEXT FOR VIDEO-->
+    <div class="Video-Text">
+        <h1 class="intro-text">Welcome to My Portfolio</h1>
+        <strong>
+            <p class="center">
+                <q>
+                    Programming is the only job I can think of
+                    where I get to be both an engineer and an artist.
+                </q>
+                <br> -Andy Hertzfeld
+                <br>
+        </strong>
+        <br> My name is Joey. Welcome to my portfolio website.
+        On it I will both tell you, and show you, my background and
+        experience learned from The Tech Academy.
+        <br>
+        <br> Thank you for stopping by, and I hope you enjoy!
+        </p>
+
+    </div>
+
+    <!--About section-->
+    <div class="Row" id="About">
+        <!--LEFT COLUMN-->
+        <div class="Column-2">
+            <img src="images/computer-programmer.jpg" alt="Programmer Working On Laptop">
+        </div>
+        <!--RIGHT COLUMN-->
+        <div class="Column-1">
+            <h1>About Me</h1>
+            <p>
+                I am a new software developer with a passion for creativity and exciting AI development projects.
+                <br>As a husband and father of three, I live a busy and fulfilling life, and love treating my family to
+                great memories!
+                <br>I am a recent graduate from <a href="https://www.learncodinganywhere.com" target="_blank">The Tech
+                    Academy</a>'s A.I. Software Developer Bootcamp.
+                <br>I have been trained and developed in the following languages: HTML, CSS, JavaScript, SQL, and more!
+                <br>I am a full-stack developer and would love to work with you on your next project. <a
+                    href="#Contact">Contact</a> me below!
+            </p>
+        </div>
+    </div>
+
+    <!--GITHUB SECTION-->
+    <div class="Row" id="GitHub">
+        <!--LEFT COLUMN-->
+        <div class="Column-1">
+            <h1>GitHub</h1>
+            <p class="center">
+                You can view my coding projects on my Github profile here:
+                <br>
+            <p class="center"><a href="https://github.com/joeyfarruggia" target="_blank">Joey Farruggia's GitHub</a></p>
+            </p>
+        </div>
+        <!--RIGHT COLUMN-->
+        <div class="Column-2">
+            <a href="https://github.com/joeyfarruggia" target="_blank"><img src="images/GitHub-Logo.png"
+                    alt="GitHub Logo"></a>
+        </div>
+    </div>
+
+    <!--CONTACT SECTION-->
+    <div class="Row" id="Contact">
+        <!--LEFT COLUMN, CONTACT IMAGE-->
+        <div class="Column-2 Column-tall">
+            <img src="images/Phone-Contact.jpg" alt="Contact Image">
+        </div>
+        <!--RIGHT COLUMN, CONTACT FORM-->
+        <div class="Column-1 Column-tall">
+            <h1>Contact Me</h1>
+            <!--This specifies where and how to send the form data and is being left blank for now.-->
+            <form action="" method="POST">
+                <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+                <label>Name:</label>
+                <input type="text" placeholder="Your name here please">
+                <label>Email:</label>
+                <input type="text" id="Email" name="Email" placeholder="Your email here please">
+                <label>Message:</label>
+                <input type="text" id="Message" name="Message" placeholder="Enter your message here please">
+                <input type="submit" value="SUBMIT">
+            </form>
+        </div>
+    </div>
+
+    <!--FOOTER SECTION-->
+    <footer>
+        <p class="center">
+            &copy; 2024 Joey Farruggia. All rights reserved.
+            <br>Graduate from <a href="https://www.learncodinganywhere.com" target="_blank">The Tech
+                Academy</a>
+        </p>
+    </footer>
+
+</body>

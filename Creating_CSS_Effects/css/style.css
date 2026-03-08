@@ -1,0 +1,254 @@
+/*NAVBAR*/
+.nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    /*Sets the position of the navbar in the stack
+    layer so it is on top*/
+}
+
+ul {
+    list-style-type: none;
+    /*Removes the default bullet points from the list*/
+    margin: -10px -10px 0px -10px;
+    /*Margin value order top, right, 
+    bottom, left*/
+    overflow: hidden;
+    /*Hides excess margin space expanding past the browser
+    window edge and preverts a left to right scroll bar from appearing*/
+    background-color: #363636;
+    display: flex;
+    /*Creates flex container so the elements will take up
+    as much of the width as is available*/
+    align-items: center;
+}
+
+a {
+    display: block;
+    font-family: 'Sofia', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    /*Removes the default underline from the links*/
+    text-transform: uppercase;
+    /*Transforms the text to uppercase regardless of
+    case typed into HTML file*/
+    width: 100px;
+    padding: 30px;
+    text-align: center;
+    transition: background-color 0.4s ease-in;
+}
+
+/*NAVBAR ROLLOVER EFFECTS*/
+a:hover,
+.drop:hover
+
+/*drop hover triggers when any one of the links in
+the Images list tag is being hovered over*/
+    {
+    background-color: rgb(228, 159, 0);
+    color: rgb(49, 49, 49);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.3s ease-in;
+}
+
+
+/*Styles and hides the anchor links within the Images link div tag*/
+.rollover-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*Displays the anchor links within the Images link div tag when hovered over*/
+.drop:hover .rollover-menu {
+    display: block;
+}
+
+/*Specifically styles the anchor links within the 
+Images link div tag when hovered over*/
+.rollover-menu a {
+    color: #363636;
+}
+
+
+/*Specifically styles the anchor links within the div tag
+that contains the rollover-menu class selector when the hover effect is
+triggered*/
+.rollover-menu a:hover {
+    color: white;
+}
+
+/*Specifically styles the first anchor element within the 
+rollover-menu div tag*/
+.rollover-menu a:hover:nth-child(1) {
+    background-color: rgb(117, 20, 20);
+}
+
+/*Specifically styles the second anchor element within the
+rollover-menu div tag*/
+
+.rollover-menu a:hover:nth-child(2) {
+    background-color: rgb(87, 7, 7);
+}
+
+/*Specifically styles the third anchor element within the
+rollover-menu div tag*/
+
+.rollover-menu a:hover:nth-child(3) {
+    background-color: rgb(48, 2, 2);
+}
+
+/*FOOTER*/
+
+footer {
+    background-color: #363636;
+    margin: 30px -10px -10px -10px;
+    /*Margin value order 
+    top, right, bottom, left*/
+    overflow: hidden;
+    /*Hides excess margin space expanding past the browser
+    preventing left to right scroll bar*/
+    height: 70px;
+}
+
+/*Styles the text within the footer element*/
+.footer-text {
+    font-family: Calibri, sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+    color: rgb(228, 159, 0);
+    text-align: center;
+}
+
+/*IMAGES*/
+
+img {
+    width: 700px;
+    height: 550px;
+}
+
+/*Creates a container for each image to be held in*/
+.img-container {
+    display: flex;
+    justify-content: center;
+    /*Distributes the images evenly across the width of the page*/
+    padding-top: 120px;
+}
+
+/*Creates a uniform amount of space as other two images on screen from
+navbar to top of image when bookmark link is clicked on*/
+#image3 {
+    padding-bottom: 170px;
+}
+
+/*Image ONE*/
+/*Overlays dark grey over 1st image*/
+.overlay {
+    position: absolute;
+    width: 700px;
+    height: 550px;
+    background-color: rgb(90, 90, 90);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+/*Triggers hover effect of overlay on Image 1 with 60% opacity*/
+.overlay:hover {
+    opacity: 0.6;
+}
+
+/*Image TWO*/
+.zoom {
+    transform: scale(1);
+    /*Sets the base size of image 2 for zoom in effect*/
+    transition: 0.5s ease-out;
+    /*Creates a smooth transition for the image
+    zooming back to its original size*/
+    z-index: 3;
+    /*Sets image position in stack layer behind 
+    navbar so zoom does not cover navbar*/
+
+}
+
+/*Creates a zoom in effect on image 2*/
+.zoom:hover {
+    transform: scale(1.5);
+    /*Scales image 2 to grow half its original size*/
+    transition: 0.5s ease-out;
+}
+
+/*Image THREE*/
+
+/*Creates the position of the animation burst and hides
+any overflow of the shape size going beyond the edges of image 3*/
+.circle {
+    position: relative;
+    margin: 0px;
+    overflow: hidden;
+}
+
+/*Sets up the burst animation shape and position before the 
+hover effect is triggered.*/
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    /*Creates a circle/oval shape*/
+    opacity: 0;
+    /*Makes the shape invisible until the animation
+    is triggered by a hover effect*/
+    top: 50%;
+    left: 50%;
+    /*Top and left position circle to center of image 3*/
+    transform: translate(-50%, -50%);
+    /*Allows circle to evenly expand on all
+    4 sides of image 3*/
+    animation: burst-reverse 1s;
+}
+
+/*Triggers hover effect on circle class selector ::before*/
+.circle:hover::before {
+    animation: burst 1s;
+    animation-fill-mode: forwards;
+}
+
+/*Creates a growing circle effect*/
+@keyframes burst {
+    0%
+
+    /*0% is the start of the animation*/
+        {
+        opacity: 0.2;
+        background-color: rgb(224, 224, 224);
+    }
+
+    100%
+
+    /* 100% is end of animation*/
+        {
+        opacity: 0.7;
+        background-color: rgb(224, 224, 224);
+        width: 300%;
+        height: 300%;
+    }
+}
+
+/*Does the opposite of burst animation*/
+@keyframes burst-reverse {
+    0% {
+        opacity: 0.7;
+        background-color: rgb(224, 224, 224);
+        width: 300%;
+        height: 300%;
+    }
+
+    100% {
+        opacity: 0.2;
+        background-color: rgb(224, 224, 224);
+    }
+}

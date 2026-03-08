@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic&display=swap');
+/*Import link for Playwrite NZ Basic font from fonts.google.com*/
+
+html {
+    background-color: black;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: darkcyan;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-bar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    background-color: bisque;
+    color: black;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    /*Removes the default bullet points from the list*/
+    align-items: center;
+    justify-content: center;
+
+}
+
+header {
+    padding: 70px 0px 20px 0px;
+}
+
+.video-header {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    padding: 0;
+}
+
+.header-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.header-content {
+    position: relative;
+    z-index: 8;
+    padding: 2rem;
+    max-width: 90%;
+}
+
+.video-header h1 {
+    color: bisque;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
+    background-color: transparent;
+    margin: 0;
+}
+
+a {
+    font-size: large;
+    font-family: "Playwrite NZ Basic", cursive;
+    /*Font from fonts.google.com*/
+    color: darkcyan;
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: "Playwrite NZ Basic", cursive;
+    /*Font from fonts.google.com*/
+    font-size: xx-large;
+    color: bisque;
+    background-color: black;
+    text-align: center;
+}
+
+
+h2,
+h3 {
+    font-family: "Playwrite NZ Basic", cursive;
+    /*Font from fonts.google.com*/
+    font-size: large;
+    color: bisque;
+    background-color: black;
+    text-align: center;
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-family: "Playwrite NZ Basic", cursive;
+    font-weight: bold;
+    font-size: medium;
+    transition: 0.3s ease-in;
+    cursor: default;
+}
+
+p:hover {
+    color: darkcyan;
+    transition: 0.3s ease-in;
+}
+
+li {
+    align-items: center;
+}
+
+#contact {
+    display: block;
+    margin-bottom: 50px;
+}
+
+form {
+    display: table;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form input {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    color: black;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 10px 15px 10px 0px;
+    width: 100%;
+
+}
+
+.img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    border: 2px solid whitesmoke;
+    border-radius: 25px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in;
+    padding: 20px;
+}
+
+.img:hover {
+    filter: grayscale(0%);
+    /*Removes the grayscale filter when the user hovers over the image*/
+    transition: filter 0.3s ease-in;
+}
+
+.footer {
+    font-family: "Playwrite NZ Basic", cursive;
+    /*Font from fonts.google.com*/
+    font-weight: bold;
+    color: white;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    gap: 40px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-column {
+    flex: 1 1 250px;
+    margin: 10px;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-family: "Playwrite NZ Basic", cursive;
+    /*Font from fonts.google.com*/
+}
+
+/* Wrapper to position the text overlay relative to the image */
+.image-hover-wrapper {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+/* Hover text - starts invisible */
+.hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: bisque;
+    font-family: "Playwrite NZ Basic", cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.image-hover-wrapper:hover .hover-text {
+    opacity: 1;
+}
+
+.image-hover-wrapper {
+    pointer-events: none;
+}
+
+.img {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+
+
+
+
+/* ================================================
+   MOBILE-FRIENDLY / RESPONSIVE ADJUSTMENTS
+   ================================================ */
+
+/* Ensure everything respects the viewport */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
+
+/* Make images fully responsive on small screens */
+@media screen and (max-width: 768px) {
+    .img {
+        width: 90%;
+        /* Almost full width on phones */
+        margin: 20px auto;
+        padding: 10px;
+        /* Less padding on small screens */
+    }
+
+    .image-hover-wrapper {
+        margin: 15px auto;
+    }
+
+    .hover-text {
+        font-size: 1.5rem;
+        /* Smaller hover overlay text on mobile */
+    }
+}
+
+/* Fixed navbar improvements + prevent overlap with content */
+.nav-bar {
+    padding: 10px 0;
+    /* Slightly less padding on all sizes */
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar {
+        padding: 8px 0;
+        text-align: center;
+        /* Center links on mobile */
+    }
+
+    .nav-bar a {
+        float: none;
+        /* Stop floating */
+        display: inline-block;
+        /* Make them inline but block-level feel */
+        width: auto;
+        padding: 12px 18px;
+        /* Bigger tap targets */
+        font-size: 1.1rem;
+    }
+
+    /* Add some top margin to first section so fixed nav doesn't cover it */
+    header.video-header,
+    section:first-of-type {
+        margin-top: 70px;
+        /* ≈ height of your fixed nav – adjust if needed */
+    }
+}
+
+/* Video header – better mobile handling (address bar hide/show issue) */
+@media screen and (max-width: 768px) {
+    .video-header {
+        height: 60vh;
+        /* Shorter on mobile */
+        min-height: 400px;
+        margin-top: 60px;
+        /* Adjusted for nav height */
+    }
+
+    .header-content h1 {
+        font-size: 2.2rem;
+        /* Smaller but still bold */
+        padding: 0 15px;
+    }
+
+    .video-overlay {
+        background: rgba(0, 0, 0, 0.65);
+        /* Darker overlay on mobile for readability */
+    }
+}
+
+/* Product section – stack images vertically, full width */
+@media screen and (max-width: 768px) {
+    section div>div {
+        display: block;
+        /* Force vertical stacking */
+    }
+
+    .image-hover-wrapper {
+        width: 100%;
+        max-width: 400px;
+        /* Cap width so not edge-to-edge */
+    }
+}
+
+/* Story section – better readability */
+@media screen and (max-width: 768px) {
+    #story {
+        padding: 0 20px;
+    }
+
+    #story h2 {
+        font-size: 1.8rem;
+    }
+
+    #story p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+}
+
+/* Contact form – make it mobile-friendly */
+@media screen and (max-width: 768px) {
+    form {
+        display: block;
+        /* Stack inputs vertically */
+        width: 90%;
+        max-width: 400px;
+    }
+
+    form input {
+        display: block;
+        width: 100%;
+        margin: 12px 0;
+        font-size: 1rem;
+    }
+
+    form input[type="submit"] {
+        margin-top: 15px;
+    }
+}
+
+/* Footer – stack columns on small screens */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-column {
+        margin: 8px 0;
+    }
+}
+
+/* Disable or adjust hover effects on touch devices (prevents "stuck" hover) */
+@media (hover: none) {
+
+    .img:hover,
+    p:hover {
+        filter: none;
+        /* No grayscale change on touch */
+        color: bisque;
+        /* Reset to default color */
+    }
+
+    .hover-text {
+        opacity: 0;
+        /* Hide hover text on touch – or make always visible if preferred */
+    }
+}
+
+/* Optional: Larger tap targets and text sizes for accessibility */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 16px;
+        /* Base font size – helps accessibility */
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}

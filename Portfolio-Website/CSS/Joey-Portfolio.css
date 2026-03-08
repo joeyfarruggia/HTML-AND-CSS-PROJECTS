@@ -1,0 +1,317 @@
+/*GENERAL STYLING FOR PORTFOLIO WEBSITE*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic&display=swap');
+/*Import link for Playwrite NZ Basic font from fonts.google.com*/
+
+
+/*BODY*/
+
+* {
+    box-sizing: border-box;
+}
+
+.Background {
+    margin: 0;
+}
+
+/*BODY END*/
+
+/*Styles h1 elements*/
+h1 {
+
+    text-transform: uppercase;
+    font-family: "Playwrite NZ Basic", sans-serif;
+    text-align: center;
+    margin-top: 3%;
+    color: black;
+}
+
+/*Styles hover effect for h1 elements*/
+h1:hover {
+
+    filter: drop-shadow(0 0 6px darkolivegreen);
+    transition: filter 0.5s ease-in;
+
+}
+
+/*Styles text that appears on top of the video header*/
+.intro-text {
+
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+/*Styles p elements*/
+p {
+
+    font-family: "Playwrite NZ Basic", sans-serif;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*Styles hover effect for p elements*/
+p:hover {
+
+    transform: scale(1.01);
+    transition: transform 1s;
+}
+
+/*Centers all text with the class center*/
+.center {
+    text-align: center;
+}
+
+/*Anchor elements*/
+a {
+    color: blue;
+    /*Ensures all anchor elements stay blue, even if they are visited or active*/
+}
+
+/*Styles quote elements*/
+q {
+    font-style: italic;
+}
+
+/*Styles the image elements*/
+img {
+    filter: brightness(80%);
+    border-radius: 8px;
+    max-width: 100%;
+    height: 340px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Styles the hover effect for image elements*/
+img:hover {
+    filter: brightness(100%);
+    transition: transform 0.5s;
+    transform: scale(1.01);
+}
+
+/*Styles the image elements for mobile devices*/
+@media screen and (max-width: 576px) {
+    img {
+        height: auto;
+    }
+}
+
+/*Styling for footer elements*/
+footer {
+    padding: 2%;
+    background-color: white;
+}
+
+/*END OF GENERAL STYLING FOR PORTFOLIO WEBSITE*/
+
+/*------------*/
+
+/*START OF NAV BAR STYLING*/
+
+/*nav bar styling for animation in, and color*/
+
+.Navbar {
+    overflow: hidden;
+    background-color: darkslateblue;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation: moveNav 3s;
+    animation: moveNav 3s;
+}
+
+@keyframes moveNav {
+    from {
+        left: -100vw;
+    }
+
+    to {
+        left: 0vw;
+    }
+}
+
+.Navbar a {
+    float: left;
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Playwrite NZ Basic", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    -webkit-animation: moveNavText 2s;
+    animation: moveNavText 1.5s;
+}
+
+@keyframes moveNavText {
+    from {
+        top: -100vw;
+    }
+
+    to {
+        top: 0vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Navbar a {
+        width: 25%;
+        font-size: 12px;
+    }
+}
+
+/*nav bar hover effects*/
+
+.Navbar a:hover {
+    background-color: bisque;
+    color: black;
+    font-weight: bold;
+
+}
+
+/*Navbar home button*/
+
+.Navbar a.active {
+    background-color: darkolivegreen;
+    /*targets the element on the nav bar with the class "active".*/
+}
+
+/*END NAV BAR STYLING*/
+
+/*------------*/
+
+/*STYLING FOR VIDEO*/
+
+/*Formatting for background video in header section*/
+
+#Record-Player-Video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 576px) {
+    #Record-Player-Video {
+        display: none;
+    }
+}
+
+.Video-Text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white;
+    width: 100%;
+    position: relative;
+    -webkit-animation: moveVideoText 5.75s;
+    animation: moveVideoText 5.75s;
+}
+
+@keyframes moveVideoText {
+    from {
+        top: -100vw;
+    }
+
+    to {
+        top: 0vw;
+    }
+}
+
+/*END OF VIDEO STYLING*/
+
+/*------------*/
+
+/*TABLE STYLING*/
+
+.Column-1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background-color: #f2f2f2;
+}
+
+.Column-2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background-color: #4d4d4d;
+}
+
+.Column-tall {
+    padding-top: 3.5%;
+    height: 450px;
+}
+
+.Row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*END OF TABLE STYLING*/
+
+/*------------*/
+
+/*CONTACT FORM STYLING*/
+
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-family: Perpetua, Rockwell extra bold, serif;
+}
+
+input[type=text]:hover {
+    box-shadow: 0 0 5px 1px darkslateblue;
+}
+
+input[type=submit] {
+    background-color: darkolivegreen;
+    color: black;
+    font-weight: bold;
+    padding: 4px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "playwrite NZ Basic", sans-serif;
+}
+
+input[type=submit]:hover {
+    background-color: darkslateblue;
+    color: white;
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 1.0s;
+}
+
+/*Form Element*/
+
+
+form {
+    padding-bottom: 20px;
+}
+
+/*END OF CONTACT FORM STYLING*/
