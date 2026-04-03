@@ -3,6 +3,17 @@
 
 html {
     background-color: black;
+    scroll-behavior: smooth;
+}
+
+body {
+    opacity: 1;
+    transition: 1s opacity;
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: none;
 }
 
 .nav-bar {
@@ -66,6 +77,21 @@ header {
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: 1;
+    animation: zoominout 15s forwards;
+}
+
+@keyframes zoominout {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
 .video-overlay {
@@ -88,7 +114,20 @@ header {
     background-color: transparent;
     margin: 0;
     font-size: 4vw;
+    animation: hero-heading-drop 1s ease-out 0.15s both;
 
+}
+
+@keyframes hero-heading-drop {
+    from {
+        transform: translateY(-120px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 a {
@@ -145,6 +184,120 @@ li {
 #contact {
     display: block;
     margin-bottom: 50px;
+}
+
+.contact-cta {
+    text-align: center;
+    margin: 20px auto 60px;
+    padding: 0 20px;
+}
+
+.contact-open-btn {
+    font-family: "Playwrite NZ Basic", cursive;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: #f2f2f2;
+    background: darkcyan;
+    border: 2px solid bisque;
+    border-radius: 6px;
+    padding: 12px 28px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.contact-open-btn:hover {
+    background-color: bisque;
+    color: black;
+    transform: translateY(-2px);
+}
+
+.contact-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.contact-modal.active {
+    display: flex;
+}
+
+.contact-modal-panel {
+    width: min(500px, 92vw);
+    background: #111;
+    border: 2px solid darkcyan;
+    border-radius: 10px;
+    box-shadow: 0 0 28px rgba(0, 139, 139, 0.35);
+    padding: 24px 24px 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.contact-modal-panel h3 {
+    margin: 0 auto 10px;
+    padding-right: 38px;
+    background: transparent;
+}
+
+.contact-modal-panel p {
+    margin: 0 auto 12px;
+    background: transparent;
+}
+
+.contact-modal-panel form {
+    display: block;
+    width: min(100%, 420px);
+    margin: 0 auto;
+    padding: 0;
+}
+
+.contact-modal-panel form input {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+.contact-modal-panel input[type="submit"] {
+    font-family: "Playwrite NZ Basic", cursive;
+    background: darkcyan;
+    color: #f2f2f2;
+    border: 2px solid bisque;
+    cursor: pointer;
+    margin-top: 14px;
+}
+
+.contact-modal-panel input[type="submit"]:hover {
+    background: bisque;
+    color: black;
+}
+
+.contact-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: bisque;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.contact-modal-close:hover {
+    color: darkcyan;
+}
+
+.contact-modal-panel .contact-modal-close {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 form {
@@ -402,6 +555,10 @@ body {
 
     form input[type="submit"] {
         margin-top: 15px;
+    }
+
+    .contact-modal-panel {
+        padding: 20px 16px;
     }
 }
 

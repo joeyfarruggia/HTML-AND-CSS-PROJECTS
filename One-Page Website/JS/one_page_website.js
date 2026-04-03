@@ -66,3 +66,62 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') document.querySelector('.lightbox-prev').click();
     if (e.key === 'Escape') lightbox.classList.remove('active');
 });
+
+const contactModal = document.getElementById('contact-modal');
+const openContactModalBtn = document.getElementById('open-contact-modal');
+const closeContactModalBtn = document.getElementById('close-contact-modal');
+const contactForm = document.getElementById('contact-form');
+
+function openContactModal() {
+    contactModal.classList.add('active');
+    contactModal.setAttribute('aria-hidden', 'false');
+}
+
+function closeContactModal() {
+    contactModal.classList.remove('active');
+    contactModal.setAttribute('aria-hidden', 'true');
+}
+
+openContactModalBtn.addEventListener('click', openContactModal);
+closeContactModalBtn.addEventListener('click', closeContactModal);
+
+contactModal.addEventListener('click', (e) => {
+    if (e.target === contactModal) closeContactModal();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+        closeContactModal();
+    }
+});
+
+function validateForm() {
+    const firstName = document.getElementById('first-name').value.trim();
+    const lastName = document.getElementById('last-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    if (!firstName || !lastName || !email || !phone) {
+        alert('Please fill in all fields.');
+        return false;
+    }
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+    const phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(phone)) {
+        alert('Please enter a valid 10-digit phone number.');
+        return false;
+    }
+    alert('Thank you for submitting your contact information!');
+    return true;
+}
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+        contactForm.reset();
+        closeContactModal();
+    }
+});

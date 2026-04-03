@@ -11,17 +11,26 @@
 </head>
 
 <body>
+    <script>document.body.classList.add("fade-out");
+        window.addEventListener("DOMContentLoaded", () => {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    document.body.classList.remove("fade-out");
+                });
+            });
+        });
+    </script>
     <!--PAGES NAV BAR-->
     <nav>
         <div class="nav-bar">
-            <a href="#Heritage_Heat_Website.html">Home</a>
+            <a href="#video-header">Home</a>
             <a href="#Products">Products</a>
             <a href="#story">Our Story</a>
-            <a href="#contact">Contact Us</a>
+            <a href="#contact-trigger">Contact Us</a>
         </div>
     </nav>
     <!--HEADER-->
-    <header class="video-header">
+    <header id="video-header" class="video-header">
         <video class="header-video" autoplay muted loop playsinline>
             <source src="Fire-Video.mp4" type="video/mp4">
             Your browser does not support video backgrounds.
@@ -115,18 +124,26 @@
     <!--NEWSLETTER SIGN UP FORM-->
 
     <section>
-        <div id="contact">
+        <div id="contact-trigger" class="contact-cta">
             <h3>Please get us your contact info to stay up to date with our page!</h3>
-            <div>
-                <form>
-                    <input type="text" placeholder="First Name">
-                    <input type="text" placeholder="Last Name">
-                    <input type="email" placeholder="Email">
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+            <button type="button" id="open-contact-modal" class="contact-open-btn">Contact Form</button>
         </div>
     </section>
+
+    <div id="contact-modal" class="contact-modal" aria-hidden="true">
+        <div class="contact-modal-panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+            <button type="button" id="close-contact-modal" class="contact-modal-close" aria-label="Close contact form">&times;</button>
+            <h3 id="contact-modal-title">Contact Form</h3>
+            <p>Fill out your information and we will keep you updated.</p>
+            <form id="contact-form">
+                <input id="first-name" type="text" placeholder="First Name">
+                <input id="last-name" type="text" placeholder="Last Name">
+                <input id="email" type="email" placeholder="Email">
+                <input id="phone" type="tel" placeholder="Phone Number">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
 
     <!--OUR STORY-->
 
