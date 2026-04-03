@@ -87,6 +87,8 @@ header {
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
     background-color: transparent;
     margin: 0;
+    font-size: 4vw;
+
 }
 
 a {
@@ -107,6 +109,7 @@ h1 {
     color: bisque;
     background-color: black;
     text-align: center;
+
 }
 
 
