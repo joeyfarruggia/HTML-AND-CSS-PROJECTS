@@ -3,8 +3,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic&display=swap');
 /*Import link for Playwrite NZ Basic font from fonts.google.com*/
 
+/*Affects entire document*/
+
+html {
+    scroll-behavior: smooth;
+    /*Makes sure any navbar selections operate with a smooth scroll effect*/
+}
 
 /*BODY*/
+
+body {
+    margin: 0%;
+    /*Ensures the site displays all the way to the edge of the browser window*/
+    opacity: 1;
+    /*This and transition affect the page loading fade in effect*/
+    transition: 3s opacity;
+    /*This makes the page fade in over 3 seconds when it loads*/
+    letter-spacing: .2vw;
+    /* vw is a relative measurement, 1vw is equal to 1% of the viewport width*/
+    font-family: Avant Garde, Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    overflow-x: hidden;
+    /*Prevent horizontal scroll bar from appearing when the quote is hovered over*/
+    user-select: none;
+    /*Prevents users from highlighting text on the page*/
+}
+
+/*This contributes to the fade effect for the page that occurs when the page is loaded*/
+body.fade-out {
+    opacity: .1;
+    /*Sets the level of opacity at the start of page load*/
+}
 
 * {
     box-sizing: border-box;
@@ -69,6 +98,10 @@ p:hover {
 a {
     color: blue;
     /*Ensures all anchor elements stay blue, even if they are visited or active*/
+    cursor: pointer;
+    /*Ensures all links change the cursor to a pointer when hovered over*/
+    text-decoration: underline;
+    /*Ensures all anchor elements are underlined, even if they are visited or active*/
 }
 
 /*Styles quote elements*/
@@ -81,10 +114,10 @@ img {
     filter: brightness(80%);
     border-radius: 8px;
     max-width: 100%;
-    height: 340px;
+    height: 100%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto auto auto auto;
+    /*This centers the image elements on the page*/
 }
 
 /*Styles the hover effect for image elements*/
@@ -173,6 +206,9 @@ footer {
     background-color: bisque;
     color: black;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease-in;
+    /*Creates a smooth transition for the hover trigger*/
 
 }
 
@@ -202,17 +238,22 @@ footer {
     left: 0;
 }
 
+/*Hides the video element on screens 576px and smaller*/
+
 @media screen and (max-width: 576px) {
     #Record-Player-Video {
         display: none;
     }
 }
 
+/*Texts over the video*/
+
 .Video-Text {
     background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding-top: 2vh;
     color: white;
     width: 100%;
+    height: auto;
     position: relative;
     -webkit-animation: moveVideoText 5.75s;
     animation: moveVideoText 5.75s;
@@ -229,6 +270,178 @@ footer {
 }
 
 /*END OF VIDEO STYLING*/
+
+/*------------*/
+
+/*SLIDESHOW STYLING*/
+
+#Slideshow_Background {
+    background: rgba(255, 255, 255, 0.35);
+    /*Creates a slightly transparent white background for the slideshow section*/
+}
+
+.mySlides {
+    display: none;
+    /*Prevents images from being displayed, I will use JS to display these.*/
+}
+
+/* Slideshow Section / container */
+#Slideshow_Container {
+    width: 39.5vw;
+    /*Relative sizing of the container for the slideshow set to 39.5% of the viewport width*/
+    height: auto;
+    /*Height of container is automatically adjusted based on content it is displaying*/
+    padding-top: 4%;
+    /*Adds small padding to top of slideshow container*/
+    position: relative;
+    /*This sets container relative to its normal position*/
+    margin: auto;
+    /*This centers the slideshow container on the page*/
+}
+
+/*Removes the underline from the previous and next buttons on the slideshow*/
+#Slideshow_Container a {
+    text-decoration: none;
+}
+
+/*Images within the slideshow container*/
+.Slideshow_Images {
+    vertical-align: middle;
+    /*This vertically centers the images within the slideshow container*/
+    width: 100%;
+    /*Ensures the images take up the full width of the slideshow container*/
+    height: auto;
+    /*Height of images is automatically adjusted based on their aspect ratio*/
+    box-shadow: 0px 5px 10px 12px rgba(0, 0, 0, 0.75);
+    /*Adds a shadow effect to the images in the slideshow*/
+}
+
+/*Previous and next buttons for the slideshow*/
+
+.prev,
+.next {
+    cursor: pointer;
+    /*Changes the cursor to a pointer when hovering over the buttons*/
+    position: absolute;
+    /*Positions the buttons absolutely within the slideshow container*/
+    top: 50%;
+    transform: translateY(-50%);
+    /*Vertically centers the buttons within the slideshow container*/
+    width: auto;
+    /*Width of buttons is automatically adjusted based on their content*/
+    padding: 2vw;
+    /*Adds padding to the buttons for better clickability*/
+    color: darkgray;
+    /*Sets the text color of the buttons to dark gray*/
+    font-weight: bold;
+    /*Makes the text on the buttons bold*/
+    font-size: 1.5vw;
+    /*Sets the font size of the button text*/
+    border-radius: 0 3px 3px 0;
+    /*Adds rounded corners to the buttons for a more polished look*/
+    transition: 0.6s ease;
+    /*Creates a smooth transition effect for hover state*/
+    user-select: none;
+    /*Prevents users from selecting the button text*/
+    z-index: 2;
+}
+
+.prev {
+    left: 0;
+}
+
+/*Positions the next button on the right hand side*/
+.next {
+    right: 0;
+    /*Positions the next button on the right edge of the slideshow container*/
+    border-radius: 3px 0 0 3px;
+    /*Adds rounded corners to the next button for a more polished look*/
+}
+
+/*Hover effects for the previous and next buttons*/
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    /*Changes the background color of the buttons to a semi-transparent black when hovered over*/
+    color: white;
+    /*Changes the text color of the buttons to white when hovered over*/
+}
+
+/*Slideshow Text*/
+
+.text {
+    color: white;
+    /*Sets the text color to white for better contrast against the images in the slideshow*/
+    padding: 1vw;
+    /*Adds padding to the text for better readability*/
+    font-size: 1.5vw;
+    /*Sets the font size of the text to 1.5% of the viewport width for responsive sizing*/
+    position: absolute;
+    /*Positions the text absolutely within the slideshow container*/
+    bottom: 0;
+    /*Positions the text at the bottom of the slideshow container*/
+    width: 100%;
+    /*Ensures the text spans the full width of the slideshow container*/
+    text-align: center;
+    /*Centers the text horizontally within the slideshow container*/
+    font-family: "Playwrite NZ Basic", sans-serif;
+    letter-spacing: .1vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    /*Gives a slightly transparent black background*/
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+    /*Adds rounded corners to the bottom of the text box for a more polished look*/
+}
+
+/*Styling for the dots under the slideshow*/
+
+.dot {
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    z-index: 1;
+}
+
+/*Hover effect for the dots under the slideshow*/
+.active,
+.dot:hover {
+    background-color: darkslateblue;
+}
+
+/*Fading animation for the slideshow images*/
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/*END OF SLIDESHOW STYLING*/
 
 /*------------*/
 
@@ -263,55 +476,277 @@ footer {
     display: table;
 }
 
+#About p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 /*END OF TABLE STYLING*/
 
 /*------------*/
 
 /*CONTACT FORM STYLING*/
 
-input[type=text] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-    font-family: Perpetua, Rockwell extra bold, serif;
-}
-
-input[type=text]:hover {
-    box-shadow: 0 0 5px 1px darkslateblue;
-}
-
-input[type=submit] {
-    background-color: darkolivegreen;
-    color: black;
-    font-weight: bold;
-    padding: 4px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: "playwrite NZ Basic", sans-serif;
-}
-
-input[type=submit]:hover {
+.Pop_Up_Button {
     background-color: darkslateblue;
     color: white;
+    border: solid black;
     cursor: pointer;
-    transform: scale(1.05);
-    transition: 1.0s;
+    font-family: "Playwrite NZ Basic", sans-serif;
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    -webkit-animation: movePopup 3s;
+    animation: movePopup 3s;
 }
 
-/*Form Element*/
+/*movePopup animation moves the button from off the right side of the screen to its fixed location on the viewport*/
+@keyframes movePopup {
+    from {
+        right: -40vw;
+    }
 
+    to {
+        right: 1.75vw;
+    }
+}
 
-form {
-    padding-bottom: 20px;
+@-webkit-keyframes movePopup {
+    from {
+        right: -40vw;
+    }
+
+    to {
+        right: 1.75vw;
+    }
+}
+
+/*Styling for the contact form pop up*/
+
+.form-popup {
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+
+/*Form Styling*/
+.form-container {
+    width: min(49vw, 560px);
+    padding: 1.4vw;
+    background: linear-gradient(160deg, #f9fbff 0%, #eef3ff 100%);
+    border: 2px solid darkslateblue;
+    border-radius: 14px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+.form-container h1 {
+    color: darkslateblue;
+    margin-top: 0;
+    margin-bottom: .8vw;
+}
+
+.form-container label {
+    font-family: "Playwrite NZ Basic", sans-serif;
+    color: #243547;
+    font-size: 1vw;
+}
+
+/*Input Fields*/
+
+.form-container input[type=text] {
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;
+    border: 2px solid #c1ccdd;
+    border-radius: 8px;
+    background: #f4f7fc;
+    font-size: 1vw;
+}
+
+.form-container input[type=text]:focus {
+    outline: none;
+    border-color: darkslateblue;
+    box-shadow: 0 0 0 3px rgba(72, 61, 139, 0.2);
+    background: #ffffff;
+}
+
+.form-container button {
+    letter-spacing: .08vw;
+    font-size: 1vw;
+    padding: .9vw;
+    border-radius: 8px;
+}
+
+/*General styling for all buttons*/
+
+button {
+    font-family: "Playwrite NZ Basic", sans-serif;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+
+/*Hover effect for contact and submit buttons*/
+
+button:hover,
+.form-container .btn:hover {
+    background-color: darkslateblue;
+    color: white;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: #4d4d4d;
+}
+
+/*Submit Button*/
+
+.form-container .btn {
+    background-color: darkolivegreen;
+    color: white;
+    border: 2px solid darkolivegreen;
+    margin-bottom: 1vh;
+}
+
+/*Close Button*/
+
+.form-container .cancel {
+    background-color: transparent;
+    color: darkslateblue;
+    border: 2px solid darkslateblue;
+}
+
+/*Styling for close button on hover*/
+
+.form-container .cancel:hover {
+    background-color: darkslateblue;
+    color: white;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: #4d4d4d;
 }
 
 /*END OF CONTACT FORM STYLING*/
+
+/*------------*/
+
+/*MEDIA QUERIES FOR MOBILE DEVICES*/
+
+/*Media rules for paragraph font size for different screen sizes*/
+@media screen and (max-width: 527px) {
+    p {
+        font-size: 3.75vw;
+    }
+}
+
+@media screen and (min-width: 528px) and (max-width: 660px) {
+    p {
+        font-size: 3.5vw;
+    }
+
+}
+
+@media screen and (min-width: 661px) and (max-width: 799px) {
+    p {
+        font-size: 2.75vw;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 924px) {
+    p {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+    p {
+        font-size: 2.25vw;
+    }
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1310px) {
+    p {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 1311px) and (max-width: 1535px) {
+    p {
+        font-size: 1.75vw;
+    }
+}
+
+@media screen and (min-width: 1536px) and (max-width: 2269px) {
+    p {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 2270px) {
+    p {
+        font-size: 1.35vw;
+    }
+}
+
+/*Media rule for navbar links for different screen sizes*/
+/*Screens 1080px and smaller will display navbar links equally distributed*/
+@media screen and (max-width: 1080px) {
+    .Navbar a {
+        width: 20%;
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .form-container {
+        width: 92vw;
+        padding: 4vw;
+    }
+
+    .form-container label,
+    .form-container input[type=text],
+    .form-container button {
+        font-size: 3.3vw;
+    }
+
+    .form-container button {
+        padding: 3vw;
+    }
+}
+
+/* Media rules to enlarge the font of the white text for smaller screens */
+@media screen and (max-width: 1080px) {
+    .quote {
+        font-size: 3.5vw;
+    }
+
+    .white-text {
+        font-size: 4.5vw;
+    }
+}
+
+/* Media rules to increase the size of the columns for larger screens */
+@media screen and (min-width: 1725px) {
+    .Column_1 {
+        height: 550px;
+    }
+
+    .Column_2 {
+        height: 550px;
+    }
+}
+
+
+/*Media rule to remove margin-top from h1 elements for extra large screens (so that the paragraph text fits in the column*/
+@media screen and (min-width: 2000px) {
+    h1 {
+        margin-top: 0;
+    }
+}
+
+/***** End of Media Query Section *****/
